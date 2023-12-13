@@ -246,11 +246,8 @@ section {
   .keyboard {
     zoom: 0.7;
   }
-}
 
-@media screen and (max-width: 480px) {
   .letter {
-    font-size: 4vw;
+    font-size: 5vw;
   }
 }
-
