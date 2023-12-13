@@ -1,0 +1,256 @@
+:root {
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+}
+
+.App:focus-visible {
+  outline: none;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);  
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);  
+  width: 30%;
+}
+
+aside > div {
+  margin: auto;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.info-container > span {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.info-container > div {
+  animation: rotate 60s infinite linear;
+}
+
+aside > div > h1 {
+  line-height: 5rem;
+}
+
+aside > div > button {
+  color: rgb(245,245,247);
+  font-size: 2rem;
+  border-radius: 25px;
+  margin-block-end: 0.83em;
+  font-weight: 600;
+  text-align: center;
+  padding-block: 0.6rem;
+  padding-inline: 1.5rem;
+  border-radius: 15px;
+  background-color: transparent;
+  box-shadow: -3px 3px 5px 1px white;
+  transition: all 0.3s;
+}
+
+aside > div > button:hover {
+  transform: translateY(-10%) translateX(20px);
+  box-shadow: -23px 15px 5px 1px rgba(255, 255, 0, 0.7);
+  cursor: pointer;
+}
+
+aside > div > button:active {
+  border-style: outset;
+  color: rgba(255, 255, 0, 0.7);
+}
+
+aside > h2 {
+  display: block;
+  margin-bottom: 5rem;
+}
+
+section {
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.5rem;
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.5rem;
+  border-spacing: 10px 5px;
+  margin-bottom: 5rem;
+}
+
+.board > tr > td {
+  width: 4rem;
+  height: 4rem;
+  border: 0.1rem solid darkgrey;
+  font-weight: bold;
+}
+
+.filled {
+  background-color: rgba(211,211,211,0.1);
+}
+
+.wrong-place, .color-yellow {
+  background-color: rgba(255, 255, 0, 0.7) !important;
+}
+
+.wrong-letter, .color-red {
+  background-color: rgba(255, 0, 0, 0.5) !important;
+}
+
+.correct-letter, .color-green {
+  background-color:  rgba(124, 245, 105,0.5) !important;
+}
+
+.wrong-letters-summary > td {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.color-green,
+.color-yellow,
+.color-red {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.keyboard > tr > td {
+  width: 3rem;
+  min-width: 3rem;
+  height: 2rem;
+  border: 0.3rem solid white;
+  border-radius: 15px;
+}
+
+.keyboard > tr > td[change_color_when_clicked='1'] {
+  animation: change_color_when_clicked 250ms 1;
+}
+
+.keyboard > tr > td:hover {
+  cursor: pointer;
+  background-color: rgba(211, 211, 211,0.2);
+}
+
+.previousSolution {
+  color: rgba(124, 245, 105,0.5);
+}
+
+.anim_previous {
+  display: block;
+  animation: entry_show 1s 1;
+}
+
+.winStreak {
+  display: block;
+  transform: rotate(3deg);
+  font-size: 4rem;
+  text-shadow: 2px 2px 2px red;
+}
+
+@keyframes change_color_when_clicked {
+  from {
+    transform: scale(1.2);
+    background-color: lightgrey;
+  }
+
+  to {
+    transform: scale(1);
+    background-color: transparent;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+
+  }
+  to {
+    transform: rotate(720deg);
+  }
+
+}
+
+@keyframes entry_show {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-25vh);
+
+  }
+  to {
+    opacity: 1 !important;
+    filter: blur(0) !important;
+    transform: translateY(0) !important;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+  .App {
+    flex-direction: column;
+  }
+  aside, section {
+    width: 95%;
+    margin-block: 2.5rem;
+  }
+
+  aside:nth-child(1) {
+    margin-bottom: 0;
+  }
+
+  section {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .keyboard {
+    zoom: 0.70;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .keyboard {
+    zoom: 0.5;
+  }
+}
