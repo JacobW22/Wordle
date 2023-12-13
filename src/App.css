@@ -105,7 +105,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2.5rem;
   border-collapse: separate;
   border-spacing: 10px 5px;
 }
@@ -158,9 +157,9 @@ section {
   border-radius: 15px;
 }
 
-.keyboard > tr > td {
+.letter {
   width: 3rem;
-  min-width: 3rem;
+  font-size: 2vw;
   height: 2rem;
   border: 0.3rem solid white;
   border-radius: 15px;
@@ -249,8 +248,3 @@ section {
   }
 }
 
-@media screen and (max-width: 480px) {
-  .keyboard {
-    zoom: 0.4;
-  }
-}
