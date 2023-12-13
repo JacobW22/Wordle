@@ -251,6 +251,6 @@ section {
 
 @media screen and (max-width: 480px) {
   .keyboard {
-    zoom: 0.5;
+    zoom: 0.4;
   }
 }
