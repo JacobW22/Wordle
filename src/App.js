@@ -11,7 +11,7 @@ function App() {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [bannedLetters, setBannedLetters] = useState(new Set());
   const [winStreak, setWinStreak] = useState(0);
-  const [solutionExamples, setSolutionExamples] = useState(['ROWER','JUHAS','KASZA','RYBKA','TEMPO','ENZYM','MLECZ','CEZAR','PISMO','CZART','KWITA','TRAWA','OPERA', 'BANAN']);
+  const [solutionExamples, setSolutionExamples] = useState(['ROWER','JUHAS','KASZA','RYBKA','TEMPO','ENZYM','MLECZ','CEZAR','PISMO','CZART','KWITA','TRAWA','OPERA','BANAN']);
   const [previousSolution, setPreviousSolution] = useState('');
 
   // Handle key pressing

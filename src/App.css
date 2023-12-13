@@ -248,3 +248,9 @@ section {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .letter {
+    font-size: 4vw;
+  }
+}
+
