@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(10px + 2vmin);  
+  font-size: calc(10px + 2vmin);
 }
 
 .App-link {
@@ -37,7 +37,7 @@ aside {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);  
+  font-size: calc(10px + 2vmin);
   width: 30%;
 }
 
@@ -64,7 +64,7 @@ aside > div > h1 {
 }
 
 aside > div > button {
-  color: rgb(245,245,247);
+  color: rgb(245, 245, 247);
   font-size: 2rem;
   border-radius: 25px;
   margin-block-end: 0.83em;
@@ -126,19 +126,22 @@ section {
 }
 
 .filled {
-  background-color: rgba(211,211,211,0.1);
+  background-color: rgba(211, 211, 211, 0.1);
 }
 
-.wrong-place, .color-yellow {
+.wrong-place,
+.color-yellow {
   background-color: rgba(255, 255, 0, 0.7) !important;
 }
 
-.wrong-letter, .color-red {
+.wrong-letter,
+.color-red {
   background-color: rgba(255, 0, 0, 0.5) !important;
 }
 
-.correct-letter, .color-green {
-  background-color:  rgba(124, 245, 105,0.5) !important;
+.correct-letter,
+.color-green {
+  background-color: rgba(124, 245, 105, 0.5) !important;
 }
 
 .wrong-letters-summary > td {
@@ -162,17 +165,17 @@ section {
   border-radius: 15px;
 }
 
-.keyboard > tr > td[change_color_when_clicked='1'] {
+.keyboard > tr > td[change_color_when_clicked="1"] {
   animation: change_color_when_clicked 250ms 1;
 }
 
 .keyboard > tr > td:hover {
   cursor: pointer;
-  background-color: rgba(211, 211, 211,0.2);
+  background-color: rgba(211, 211, 211, 0.2);
 }
 
 .previousSolution {
-  color: rgba(124, 245, 105,0.5);
+  color: rgba(124, 245, 105, 0.5);
 }
 
 .anim_previous {
@@ -202,12 +205,10 @@ section {
 @keyframes rotate {
   from {
     transform: rotate(0deg);
-
   }
   to {
     transform: rotate(720deg);
   }
-
 }
 
 @keyframes entry_show {
@@ -215,21 +216,20 @@ section {
     opacity: 0;
     filter: blur(5px);
     transform: translateY(-25vh);
-
   }
   to {
     opacity: 1 !important;
     filter: blur(0) !important;
     transform: translateY(0) !important;
-    }
-
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .App {
     flex-direction: column;
   }
-  aside, section {
+  aside,
+  section {
     width: 95%;
     margin-block: 2.5rem;
   }
@@ -244,9 +244,8 @@ section {
   }
 
   .keyboard {
-    zoom: 0.70;
+    zoom: 0.7;
   }
-
 }
 
 @media screen and (max-width: 480px) {
