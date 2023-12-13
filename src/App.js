@@ -23,11 +23,12 @@ function App() {
 
         let alphabet = /^[a-zA-Z]+$/; 
 
+        // Check if the pressed key is the letter in the alphabet
         if (alphabet.test(event.key)) {
           let key_to_change = document.getElementById((event.key).toUpperCase());
           key_to_change.setAttribute('change_color_when_clicked', 1);
   
-          // Block already used wrong letters
+          // Block already typed wrong letters
           if (!bannedLetters.has((event.key).toUpperCase())) {
             setTypedWord(typedWord => typedWord + (event.key).toUpperCase());
             setTypedSum(prev => prev + 1)
@@ -54,7 +55,7 @@ function App() {
     } catch (e) {}
   }
 
-  // Reset game
+  // Reset game, clear visuals
   function resetGame(win_check) {
     if (win_check === true) {
       setWinStreak(prev => prev + 1);
