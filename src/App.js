@@ -40,6 +40,10 @@ function App() {
   // Handle screen click
   function handleScreenClick(key) {
     try {
+      if (solution === '') {
+        setSolution(prev => solutionExamples[Math.floor(Math.random()*solutionExamples.length)]);
+      }
+      
       let alphabet = /^[a-zA-Z]+$/; 
 
       if (alphabet.test(key)) {
