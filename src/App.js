@@ -31,7 +31,7 @@ function App() {
           // Block already typed wrong letters
           if (!bannedLetters.has((event.key).toUpperCase())) {
             setTypedWord(typedWord => typedWord + (event.key).toUpperCase());
-            setTypedSum(prev => prev + 1)
+            setTypedSum(prev => prev + 1);
           }
         }
       } catch (e) {}
@@ -53,7 +53,7 @@ function App() {
         // Block already used wrong letters
         if (!bannedLetters.has((key).toUpperCase())) {
           setTypedWord(typedWord => typedWord + (key).toUpperCase());
-          setTypedSum(prev => prev + 1)
+          setTypedSum(prev => prev + 1);
         }
       }
     } catch (e) {}
@@ -95,7 +95,6 @@ function App() {
     if (typedWord.length > 0 && typedSum < 31) {
       try {
         let board_place = document.getElementById("board-row-" + (Math.ceil(typedSum/5)) + "").childNodes[typedWord.length-1];
-        console.log(typedWord.length, (Math.ceil(typedSum/5)), board_place, typedWord);
         board_place.innerHTML = typedWord.slice(-1);
 
         // Mark typed letters on the board and keyboard
@@ -203,12 +202,16 @@ function App() {
       <aside>
         <h2>Previous solution: <br></br> <span className="previousSolution" id="previousSolution" onAnimationEnd={(event) => event.target.classList.remove("anim_previous")}>{previousSolution}</span></h2>
         <div className="info-container">
+
           <div className="color-green"></div>
           <span>It's the correct letter</span>
+
           <div className="color-yellow"></div>
           <span>It's in the wrong spot</span>
+
           <div className="color-red"></div>
           <span>The letter isn't in the word</span>
+
         </div>
       </aside>
 
