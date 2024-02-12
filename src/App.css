@@ -7,6 +7,7 @@
   align-items: center;
   max-width: 100vw;
   user-select: none;
+  overflow-x: hidden;
 }
 
 .App {
@@ -75,7 +76,7 @@ aside > div > button {
   padding-inline: 1.5rem;
   border-radius: 15px;
   background-color: transparent;
-  box-shadow: -3px 3px 5px 1px white;
+  box-shadow: -2px 2px 15px 5px white;
   transition: all 0.3s;
 }
 
@@ -83,6 +84,7 @@ aside > div > button:hover {
   transform: translateY(-10%) translateX(20px);
   box-shadow: -23px 15px 5px 1px rgba(255, 255, 0, 0.7);
   cursor: pointer;
+  animation: rotate_btn 2s infinite linear;
 }
 
 aside > div > button:active {
@@ -127,8 +129,19 @@ section {
 
 .filled {
   background-color: rgba(211, 211, 211, 0.1);
+  animation: animate_on_board 250ms 1;
 }
 
+.filled2 {
+  background-color: rgba(211, 211, 211, 0.1);
+  animation: animate_on_board2 250ms 1;
+}
+
+.wrong-place:not(.letter),
+.wrong-letter:not(.letter),
+.correct-place:not(.letter) {
+  animation: reveal_places 750ms 1;
+}
 .wrong-place,
 .color-yellow {
   background-color: rgba(255, 255, 0, 0.7) !important;
@@ -190,6 +203,91 @@ section {
   text-shadow: 2px 2px 2px red;
 }
 
+.winStreak[animate_streak="1"] {
+  animation: animate_streak 1000ms 1;
+}
+
+.polish_flag {
+  display: flex;
+  align-self: center;
+  margin: auto;
+  margin-bottom: -2rem;
+  margin-top: 1rem;
+  width: 50px;
+  height: 50px;
+}
+
+
+@keyframes rotate_btn {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animate_streak {
+  from {
+    transform: scale(2.25) rotate(15deg);
+    color: lightblue;
+  }
+
+  to {
+    transform: scale(1) rotate(3deg);
+    color: white;
+  }
+}
+
+@keyframes reveal_places {
+  from {
+    transform: scale(2) rotate(75deg);
+    color: lightblue;
+  }
+
+  to {
+    transform: scale(1) rotate(0deg);
+    color: white ;
+  }
+}
+
+@keyframes animate_on_board {
+    from {
+      transform: scale(1.25) rotate(15deg);
+      color: lightblue;
+    }
+
+    to {
+      transform: scale(1) rotate(0deg);
+      color: white ;
+    }
+}
+
+@keyframes animate_on_board2 {
+  from {
+    transform: scale(1.25) rotate(-15deg);
+    color: lightblue;
+  }
+
+  to {
+    transform: scale(1) rotate(0deg);
+    color: white ;
+  }
+}
+
 @keyframes change_color_when_clicked {
   from {
     transform: scale(1.2);
@@ -249,5 +347,10 @@ section {
 
   .letter {
     font-size: 5vw;
+  }
+
+  .polish_flag {
+    margin-top: 1.5rem;
+    margin-bottom: -1rem;
   }
 }

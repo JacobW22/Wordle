@@ -17,7 +17,7 @@
 
 
 ## Screenshots
-![Example screenshot](src/screencapture.png)
+![Example screenshot](src/Wordle_example_screenshot.png)
 
 
 ## Project Status
