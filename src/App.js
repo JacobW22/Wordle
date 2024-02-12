@@ -66,8 +66,10 @@ function App() {
       let alphabet = /^[a-zA-Z\⌫]+$/;
 
       if (alphabet.test(key)) {
-        let key_to_change = document.getElementById((key).toUpperCase());
-        key_to_change.setAttribute('change_color_when_clicked', 1);
+        if(key !== "⌫") {
+          let key_to_change = document.getElementById((key).toUpperCase());
+          key_to_change.setAttribute('change_color_when_clicked', 1);
+        }
 
         // Block already used wrong letters
         if (!bannedLetters.has((key).toUpperCase())) {
