@@ -1,4 +1,4 @@
-![Vercel](https://vercelbadge.vercel.app/api/JacobW22/Wordle?style=flat-square)
+![Vercel](https://vercelbadge.vercel.app/api/JacobW22/Wordle?style=flat)
 # <p align="center"> Wordle </p>
 
 
