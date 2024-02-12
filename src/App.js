@@ -66,6 +66,7 @@ function App() {
       let alphabet = /^[a-zA-Z\⌫]+$/;
 
       if (alphabet.test(key)) {
+        console.log(key , key.keyCode);
         if(key !== "⌫") {
           let key_to_change = document.getElementById((key).toUpperCase());
           key_to_change.setAttribute('change_color_when_clicked', 1);
