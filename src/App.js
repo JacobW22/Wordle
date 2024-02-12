@@ -61,20 +61,26 @@ function App() {
       if (solution === '') {
         const randomIndex = Math.floor(Math.random() * 888);
         setSolution(prev => (words_file.words[randomIndex].word).toUpperCase());
+
+      }
+
+      let backspace = document.getElementById("thirdRow").lastChild;
+      if (backspace.id !== 'backspace'){
+        backspace.id = 'backspace';
       }
 
       let alphabet = /^[a-zA-Z\⌫]+$/;
 
-      if (alphabet.test(key)) {
+      if (alphabet.test(key) || key === "backspace") {
         console.log(key , key.keyCode);
-        if(key !== "⌫") {
+        if(key !== "backspace") {
           let key_to_change = document.getElementById((key).toUpperCase());
           key_to_change.setAttribute('change_color_when_clicked', 1);
         }
 
         // Block already used wrong letters
         if (!bannedLetters.has((key).toUpperCase())) {
-          if(key === "⌫") {
+          if(key === "backspace") {
             if(typedWord.length > 0) {
               setBackspaceCheck(prev => true);
               setTypedWord(typedWord => typedWord + "'");
@@ -285,19 +291,19 @@ function App() {
         </table>
 
         <table className="keyboard">
-          <tr>
+          <tr id="firstRow">
             {firstRow.map((letter, index) => ( 
               <td className="letter" key={index} id={letter} onAnimationEnd={(event) => event.target.setAttribute('change_color_when_clicked', 0) } onClick={()=>handleScreenClick(letter)}>{letter}</td>
               ))}
           </tr>
-          <tr>
+          <tr id="secondRow">
             {secondRow.map((letter, index) => (
               <td className="letter" key={index} id={letter} onAnimationEnd={(event) => event.target.setAttribute('change_color_when_clicked', 0) } onClick={()=>handleScreenClick(letter)}>{letter}</td>
             ))}
           </tr>
-          <tr>
+          <tr id="thirdRow"> 
             {thirdRow.map((letter, index) => (
-              <td className="letter" key={index} id={letter} onAnimationEnd={(event) => event.target.setAttribute('change_color_when_clicked', 0) } onClick={()=>handleScreenClick(letter)}>{letter}</td>
+              <td className="letter" key={index} id={letter} onAnimationEnd={(event) => event.target.setAttribute('change_color_when_clicked', 0) } onClick={(e)=>handleScreenClick(e.target.id)}>{letter}</td>
               ))}
           </tr>
         </table>
